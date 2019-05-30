@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         textShadowRadius: 40,
         marginRight: 4,
         fontFamily: 'Helvetica',
-        fontSize: 20,
+        fontSize: 17,
         fontWeight: 'bold',
         color: 'indigo'
     },
@@ -35,25 +35,24 @@ const styles = StyleSheet.create({
     nomeText: {
         textShadowRadius: 40,
         fontFamily: 'Helvetica',
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: 'bold',
         color: '#8b0000',
         fontStyle: 'italic'
     },
     pensamentoText: {
-
+        marginRight: 10,
         fontFamily: 'Helvetica',
-        fontSize: 20,
+        fontSize: 17,
         fontWeight: 'bold',
         color: 'darkblue',
-        textDecorationLine: "underline",
         textShadowRadius: 40,
     },
 
     descricaoText: {
         marginBottom: 10,
         fontFamily: 'Helvetica',
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: 'bold',
         color: 'black',
         textShadowRadius: 40,

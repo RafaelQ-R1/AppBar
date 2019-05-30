@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native'
-// import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
 
 const styles = StyleSheet.create({
     container1: {
         flex: 6,
         alignItems: 'center',
-        // width: wp('100%'),
-        //  height: hp('100%')
+        width: wp('100%'),
+        height: hp('100%')
 
 
     },
@@ -35,21 +35,27 @@ const styles = StyleSheet.create({
     },
 
     buttonJogo1: {
-        fontSize: 30,
+        flexDirection: 'column',
+
+        fontSize: 20,
         backgroundColor: "red",
         width: 300,
         height: 300,
-        marginBottom: 10,
-        marginTop: 1,
+        marginBottom: 2,
+        marginTop: 2,
         height: 60,
         borderRadius: 8,
         borderWidth: 2,
         borderColor: 'white',
         textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
 
 
 
-    }
+    },
+
 
 
 })

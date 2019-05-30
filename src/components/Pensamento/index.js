@@ -14,7 +14,12 @@ export default class Pensamento extends Component {
 
         try {
 
-            if ((this.state.name || this.state.text) === undefined || (this.state.name || this.state.text) == 0) {
+            if ((this.state.name ) === undefined || (this.state.name) ==="") {
+                alert('Texto e nome não podem ser em branco')
+                return
+            }
+
+            if ((this.state.text ) === undefined || (this.state.text) ==="") {
                 alert('Texto e nome não podem ser em branco')
                 return
             }
@@ -47,6 +52,7 @@ export default class Pensamento extends Component {
                    placeholder="Escreva seu Pensamento"
                    value={this.state.text}
                    onChangeText={text => this.setState({ text: text })}
+                   maxLength={200}
                >
                </TextInput>
                <TouchableHighlight>

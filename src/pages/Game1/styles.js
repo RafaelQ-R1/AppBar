@@ -47,6 +47,11 @@ const styles = StyleSheet.create({
 
     },
 
+    botaoAdd: {
+
+        marginBottom: 100
+    },
+
     vezes: {
         fontSize: 20,
 

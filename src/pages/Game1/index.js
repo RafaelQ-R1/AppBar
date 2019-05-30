@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableHighlight, TextInput, Button, Animated } from 'react-native';
+import { View, Text, Image, TouchableHighlight, TextInput, Button, Animated, ScrollView } from 'react-native';
 import styles from './styles'
 const image1 = require('../../../Assets/images/cerveja.jpg')
 const image2 = require('../../../Assets/images/batida.jpg')
@@ -106,7 +106,7 @@ export default class Game1 extends Component {
         }
 
         const ButtonDisabledTrue = <Button title="adicionar infeliz" onPress={this.AddSorteado} disabled={true} ></Button>
-        const ButtonDisabledFalse = <Button title="adicionar infeliz" onPress={this.AddSorteado} disabled={false} ></Button>
+        const ButtonDisabledFalse = <Button title="adicionar infeliz" onPress={this.AddSorteado} disabled={false}  ></Button>
 
         let MyButton
         if (this.state.textobotao === 'Sortear infeliz') {
@@ -118,33 +118,35 @@ export default class Game1 extends Component {
         }
 
         return (
-            <View style={styles.viewPrincipal}>
-                <View style={styles.view1}>
-                    <Text style={styles.vezes}> sorteado: {this.state.sorteadoFinal}  </Text>
-                    <Animated.View style={animatedStyle}>
-                        <Image source={this.state.imagem} style={styles.imagem} />
-                    </Animated.View>
+            <ScrollView>
+                <View style={styles.viewPrincipal}>
+                    <View style={styles.view1}>
+                        <Text style={styles.vezes}> sorteado: {this.state.sorteadoFinal}  </Text>
+                        <Animated.View style={animatedStyle}>
+                            <Image source={this.state.imagem} style={styles.imagem} />
+                        </Animated.View>
 
-                    <View style={styles.view2}>
+                        <View style={styles.view2}>
 
-                        <Text style={styles.vezes}>Número de goles:  {this.state.vezes}</Text>
-                        <TouchableHighlight
-                            onPress={this.sortearImagem}
+                            <Text style={styles.vezes}>Número de goles:  {this.state.vezes}</Text>
+                            <TouchableHighlight
+                                onPress={this.sortearImagem}
 
-                        >
-                            <Text style={styles.botao}>{this.state.textobotao}</Text>
-                        </TouchableHighlight>
+                            >
+                                <Text style={styles.botao}>{this.state.textobotao}</Text>
+                            </TouchableHighlight>
 
-                        <TextInput
-                            value={this.state.AdicionarSorteado}
-                            onChangeText={AdicionarSorteado => this.setState({ AdicionarSorteado })}
-                            placeholder="Adicione alguém"
-                        >
-                        </TextInput>
-                        {MyButton}
+                            <TextInput
+                                value={this.state.AdicionarSorteado}
+                                onChangeText={AdicionarSorteado => this.setState({ AdicionarSorteado })}
+                                placeholder="Adicione alguém"
+                            >
+                            </TextInput>
+                            {MyButton} 
+                        </View>
                     </View>
                 </View>
-            </View>
+            </ScrollView>
         )
     }
 }

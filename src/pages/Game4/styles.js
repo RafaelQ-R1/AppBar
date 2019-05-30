@@ -1,14 +1,24 @@
 import { StyleSheet } from 'react-native'
 
-
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 const styles = StyleSheet.create({
 
-    container: {
+    container1: {
         flex: 1,
         marginTop: 0,
         flexDirection: 'column',
         justifyContent: 'center',
+        alignContent: 'center',
+        backgroundColor: 'ghostwhite',
+        width: wp('100%'),
+        height: hp('100%')
+    },
 
+    container2: {
+        flex: 1,
+        marginTop: 0,
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignContent: 'center',
         backgroundColor: 'ghostwhite',
     },

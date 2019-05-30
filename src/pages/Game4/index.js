@@ -33,12 +33,10 @@ export default class Game4 extends Component {
                     height: 1,
                     width: "86%",
                     backgroundColor: "#CED0CE",
-                  
                 }}
             />
         );
     };
-
 
     renderItem = ({ item }) => (
         <View style={styles.container} >
@@ -48,35 +46,29 @@ export default class Game4 extends Component {
             </View>
             <Text style={styles.pensamentoText}>Pemsamento{iconThink}:</Text>
             <Text style={styles.descricaoText}>"{item.texto}"</Text>
-
-            
         </View>
-
     )
-
 
     render() {
         return (
-
-
-
-            <ScrollView >
-                <View style={styles.container}>
-                    <View>
-
-
-                    </View>
-                    <View style={styles.container}>
-                        <FlatList
-                            data={this.state.Pensamento}
-                            keyExtractor={item => item._id}
-                            renderItem={this.renderItem}
-                            ItemSeparatorComponent={this.renderSeparator}
-                        />
-                    </View>
+            <View>
+                <View>
+                    <Text style={{fontSize:15}}>Pensamentos</Text>
                 </View>
-            </ScrollView>
+                <ScrollView >
+                    <View style={styles.container1}>
 
+                        <View style={styles.container2}>
+                            <FlatList
+                                data={this.state.Pensamento}
+                                keyExtractor={item => item._id}
+                                renderItem={this.renderItem}
+                                ItemSeparatorComponent={this.renderSeparator}
+                            />
+                        </View>
+                    </View>
+                </ScrollView>
+            </View>
         )
     }
 }

@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { TextInput, Text, View, TouchableHighlight } from 'react-native'
 import style from './styles'
 import api from '../../services/api'
+import Icon from 'react-native-vector-icons/Entypo'
+
+const iconPLane = <Icon name="paper-plane" size={18} color="khaki"  />
 export default class Pensamento extends Component {
 
     state = {
@@ -56,7 +59,7 @@ export default class Pensamento extends Component {
                >
                </TextInput>
                <TouchableHighlight>
-                   <Text style={style.button} onPress={this.SendMessage} >Enviar</Text>
+                   <Text style={style.button} onPress={this.SendMessage} > Enviar{iconPLane} </Text>
                </TouchableHighlight>
            </View>
 

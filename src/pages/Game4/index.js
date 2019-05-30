@@ -30,7 +30,7 @@ export default class Game4 extends Component {
         return (
             <View
                 style={{
-                    height: 2,
+                    height: 1,
                     width: "86%",
                     backgroundColor: "#CED0CE",
                   

@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
         width: wp('100%'),
         height: hp('100%')
 
-
     },
     container2: {
         flex: 1,
@@ -36,21 +35,17 @@ const styles = StyleSheet.create({
 
     buttonJogo1: {
         flexDirection: 'column',
-
         fontSize: 20,
         backgroundColor: "red",
         width: 300,
-        height: 300,
+        height: 60,
         marginBottom: 2,
         marginTop: 2,
-        height: 60,
         borderRadius: 8,
         borderWidth: 2,
         borderColor: 'white',
-        textAlign: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'center',
+        marginLeft: 0,
+        padding: 15,
 
 
 

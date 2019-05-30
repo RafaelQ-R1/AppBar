@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
 
         alignContent: 'center',
-        backgroundColor: 'beige',
+        backgroundColor: 'ghostwhite',
     },
 
     containerRow: {

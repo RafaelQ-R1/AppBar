@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { View} from 'react-native';
+import { View, Text} from 'react-native';
 import api from '../../services/api'
 import Dialog from 'react-native-dialog'
 import styles from './styles'
@@ -40,8 +40,9 @@ export default class dialog extends Component {
             <Dialog.Container
                 style={styles.container}
                 visible={this.state.visible}>
-                <Dialog.Title style={styles.title} >Pensamento sorteado:</Dialog.Title>
+                <Dialog.Title style={styles.title} >Pensamento sorteado</Dialog.Title>
                 <Dialog.Description style={styles.name} >
+            
                     {this.state.name}
 
                 </Dialog.Description>

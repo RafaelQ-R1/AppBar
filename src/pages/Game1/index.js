@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableHighlight, TextInput, Button, Animated, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, TextInput, Button, Animated, ScrollView } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient'
 import styles from './styles'
+
 const image1 = require('../../../Assets/images/cerveja.jpg')
 const image2 = require('../../../Assets/images/batida.jpg')
 const image3 = require('../../../Assets/images/licor.jpg')
@@ -125,27 +127,27 @@ export default class Game1 extends Component {
                         <Animated.View style={animatedStyle}>
                             <Image source={this.state.imagem} style={styles.imagem} />
                         </Animated.View>
-
                         <View style={styles.view2}>
-
                             <Text style={styles.vezes}>Número de goles:  {this.state.vezes}</Text>
-                            <TouchableHighlight
-                                onPress={this.sortearImagem}
 
-                            >
-                                <Text style={styles.botao}>{this.state.textobotao}</Text>
-                            </TouchableHighlight>
-
+                            <LinearGradient colors={['darkred', 'firebrick', 'red']} start={{ x: 0, y: 0 }} end={{ x: 1.50, y: 1.50 }} style={styles.LinearGradientStyleButton}>
+                                <TouchableOpacity
+                                    onPress={this.sortearImagem}
+                                >
+                                    <Text style={styles.botao}>{this.state.textobotao}</Text>
+                                </TouchableOpacity>
+                            </LinearGradient>
                             <TextInput
                                 value={this.state.AdicionarSorteado}
                                 onChangeText={AdicionarSorteado => this.setState({ AdicionarSorteado })}
                                 placeholder="Adicione alguém"
                             >
                             </TextInput>
-                            {MyButton} 
+                            {MyButton}
                         </View>
                     </View>
                 </View>
+
             </ScrollView>
         )
     }
@@ -153,5 +155,13 @@ export default class Game1 extends Component {
 
 Game1.navigationOptions = {
 
-    title: 'Sortear bebida',
+    headerBackground: (
+        <LinearGradient
+            colors={['red', 'darkorange']}
+            style={{ flex: 1 }}
+            start={{ x: 0.25, y: 0.25 }}
+            end={{ x: 1, y: 1 }}
+        />
+    ),
+    title: 'Sortear bebida'
 }

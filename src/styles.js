@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
 
+
 const styles = StyleSheet.create({
     container1: {
         flex: 6,
@@ -33,23 +34,33 @@ const styles = StyleSheet.create({
 
     },
 
-    buttonJogo1: {
-        flexDirection: 'column',
-        fontSize: 20,
-        backgroundColor: "red",
-        width: 300,
-        height: 60,
-        marginBottom: 2,
-        marginTop: 2,
-        borderRadius: 8,
-        borderWidth: 2,
-        borderColor: 'white',
-        marginLeft: 0,
-        padding: 15,
 
+    buttonJogo1: {
+
+        fontSize: 15,
+        margin: 7,
+        color: '#fff',
+        backgroundColor: 'transparent',
 
 
     },
+
+    LinearGradientStyle: {
+        height: 45,
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderRadius: 5,
+        marginBottom: 20,
+        width: 240,
+        borderRadius: 10,
+        borderColor: 'gray',
+        borderWidth: 0.75,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+
+    },
+
+
 
 
 

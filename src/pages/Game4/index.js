@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
 import api from '../../services/api'
 import styles from './styles'
-import { FadeInView1, FadeInView2, FadeInView3, FadeInView4 } from '../../animations'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import LinearGradient from 'react-native-linear-gradient'
 
 
 const iconText = <Icon name="account" size={20} color="#4F8EF7" />
@@ -30,9 +30,11 @@ export default class Game4 extends Component {
         return (
             <View
                 style={{
-                    height: 1,
+                    height: 2,
                     width: "86%",
-                    backgroundColor: "#CED0CE",
+                    backgroundColor: "red",
+                    borderRadius: 100,
+                
                 }}
             />
         );
@@ -52,19 +54,19 @@ export default class Game4 extends Component {
     render() {
         return (
             <View>
-                <View>
-                    <Text style={{fontSize:15}}>Pensamentos</Text>
-                </View>
+        
                 <ScrollView >
                     <View style={styles.container1}>
 
                         <View style={styles.container2}>
-                            <FlatList
-                                data={this.state.Pensamento}
-                                keyExtractor={item => item._id}
-                                renderItem={this.renderItem}
-                                ItemSeparatorComponent={this.renderSeparator}
-                            />
+                            <LinearGradient colors={['gold', 'darkorange', 'red']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
+                                <FlatList
+                                    data={this.state.Pensamento}
+                                    keyExtractor={item => item._id}
+                                    renderItem={this.renderItem}
+                                    ItemSeparatorComponent={this.renderSeparator}
+                                />
+                            </LinearGradient>
                         </View>
                     </View>
                 </ScrollView>
@@ -75,7 +77,18 @@ export default class Game4 extends Component {
 
 Game4.navigationOptions = {
 
-    title: 'Pemsamentos'
+    title: 'Pemsamentos',
+    headerBackground: (
+        <LinearGradient
+            colors={['red', 'darkorange']}
+            style={{ flex: 1 }}
+            start={{ x: 0.25, y: 0.25 }}
+            end={{ x: 1, y: 1 }}
+        />
+    ),
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
 
 }
 

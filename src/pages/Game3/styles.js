@@ -1,49 +1,49 @@
 import { StyleSheet } from 'react-native'
 
 
+const scoreCircleSize = 300
 const styles = StyleSheet.create({
-
-
-    view: {
-
-        flex: 4,
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-
-
-    },
-
-
-    button: {
-        backgroundColor: 'purple',
-        fontSize: 18,
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontWeight: 'bold',
-        borderRadius: 3,
-        borderWidth: 2,
-        borderColor: 'black',
-
-    },
-
-    texto: {
-
+    score: {
+        color: "white",
         fontSize: 20,
-        color: 'blue',
-        fontWeight: 'bold'
+        fontStyle: 'italic'
     },
-
-    counter: {
-        fontSize: 40,
-        color: 'green',
-        fontWeight: 'bold'
-
-
+    circle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: scoreCircleSize,
+        height: scoreCircleSize,
+        borderRadius: scoreCircleSize / 2,
+        backgroundColor: "crimson"
+    },
+    innerContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    toolbar: {
+        backgroundColor: '#81c04d',
+        paddingTop: 30,
+        paddingBottom: 10,
+        flexDirection: 'row'
+    },
+    toolbarButton: {
+        width: 55,
+        color: '#fff',
+        textAlign: 'center'
+    },
+    toolbarTitle: {
+        color: '#fff',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        flex: 1
     }
-
-
-
-})
+});
 
 export default styles

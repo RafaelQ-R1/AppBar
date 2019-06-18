@@ -4,13 +4,16 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
 
     container: {
-        borderRadius: 80
+        borderRadius: 10,
+
     },
 
     title: {
 
         fontSize: 25,
-        color: 'red'
+        color: 'red',
+        textShadowRadius: 40,
+
     },
 
     name: {

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Text, View, Divider, Button } from 'react-native'
+import { Text, View, Button } from 'react-native'
 import styles from './styles'
 import Spinner from 'react-native-spinkit'
 import Lista from './lista'
+import LinearGradient from 'react-native-linear-gradient'
 
 export default class Game2 extends Component {
 
@@ -49,19 +50,21 @@ export default class Game2 extends Component {
 
 
     render() {
-        const spiner = <View style={styles.viewLoading}>
+        const spiner =       
+        <View style={styles.viewLoading}>
             <Spinner color={'black'} size={100} type={'Circle'} />
             <Text style={styles.textLoading}>Calculando...</Text>
         </View>
 
 
-        const Botao = <View >
+        const Botao =
+         <View >
             <Button title="Descobrir?" onPress={this.gerarResultado}></Button>
             <Text>{this.state.calculando}</Text>
-
         </View>
-        const Tela = <View style={styles.viewPrincipal}>
-
+        
+        const Tela = 
+        <View style={styles.viewPrincipal}>
             <View style={styles.viewPrimeira} >
                 <Text style={styles.texto1}> {this.state.resultadoFinal}</Text>
 
@@ -76,22 +79,32 @@ export default class Game2 extends Component {
 
         return (
             <View style={styles.viewPrimeira}>
-                {MostrarSpiner ? (
-                    spiner
-                ) : (
-                        null
-                    )}
-                {Mostrar ? (
-                    Botao
-                ) : (
-                        Tela
-                    )}
+             
+                    {MostrarSpiner ? (
+                        spiner
+                    ) : (
+                            null
+                        )}
+                    {Mostrar ? (
+                        Botao
+                    ) : (
+                            Tela
+                        )}
+           
             </View>
 
         )
     }
 }
 Game2.navigationOptions = {
+    headerBackground: (
+        <LinearGradient
+            colors={['red', 'darkorange']}
+            style={{ flex: 1 }}
+            start={{ x: 0.25, y: 0.25 }}
+            end={{ x: 1, y: 1 }}
+        />
+    ),
 
     title: 'Você é afronhado ou viril?',
 }

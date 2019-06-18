@@ -34,20 +34,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
 
     },
-    botao: {
 
-        fontSize: 20,
-        backgroundColor: "#FFA500",
-        width: 150,
-        marginBottom: 20,
-        marginTop: 20,
-        height: 60,
-        borderRadius: 8,
-        borderWidth: 2,
-        borderColor: '#FF4500',
-        textAlign: 'center'
-
-    },
 
     botaoAdd: {
 
@@ -57,7 +44,37 @@ const styles = StyleSheet.create({
     vezes: {
         fontSize: 20,
 
-    }
+    },
+
+
+
+    botao: {
+
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        margin: 7,
+        color: '#d2691e',
+        backgroundColor: 'transparent',
+
+
+    },
+
+    LinearGradientStyleButton: {
+        height: 60,
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderRadius: 5,
+        padding: 8,
+        width: 170,
+        borderRadius: 10,
+        borderColor: 'gray',
+        borderWidth: 0.75,
+        marginTop: 10,
+        borderRadius: 20,
+        justifyContent: 'center',
+
+    },
 
 
 })

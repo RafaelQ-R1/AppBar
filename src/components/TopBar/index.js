@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, Image, View } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 const imagem = require('../../../Assets/images/joaquim.jpg')
 import styles from './styles'
 

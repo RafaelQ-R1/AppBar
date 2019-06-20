@@ -4,10 +4,7 @@ import api from '../../services/api'
 import styles from './styles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient'
-
-
 const iconText = <Icon name="account" size={20} color="#4F8EF7" />
-
 const iconThink = <Icon name='chat-processing' color='cornflowerblue' />
 export default class Game4 extends Component {
 

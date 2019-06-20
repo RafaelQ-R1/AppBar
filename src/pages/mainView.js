@@ -27,7 +27,6 @@ export const GradientButton = props => {
 
 }
 
-
 const mainView = ({ navigation }) => {
 
     return (
@@ -72,8 +71,6 @@ const mainView = ({ navigation }) => {
                 </ImageBackground>
             </View >
         </ScrollView>
-
-
     )
 
 }

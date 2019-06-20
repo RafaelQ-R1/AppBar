@@ -13,8 +13,6 @@ export default class Game2 extends Component {
         resultadoFinal: '',
         description: '',
         calculando: ''
-
-
     }
 
     gerarResultado = async () => {
@@ -55,7 +53,6 @@ export default class Game2 extends Component {
             <Spinner color={'black'} size={100} type={'Circle'} />
             <Text style={styles.textLoading}>Calculando...</Text>
         </View>
-
 
         const Botao =
          <View >

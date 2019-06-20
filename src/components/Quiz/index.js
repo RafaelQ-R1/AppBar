@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
+    AppRegistry,
     StyleSheet,
     Text,
     View,
+    Button,
     Dimensions,
     ScrollView,
     TouchableOpacity
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Animbutton from './animButton'
-
 const { width, height } = Dimensions.get('window')
 let arrnew = []
 const jsonData = {
@@ -123,7 +124,7 @@ export default class Quiz extends Component {
         const options = Object.keys(currentOptions).map(function (k) {
             return (<View key={k} style={{ margin: 10 }}>
 
-                <Animbutton countCheck={_this.state.countCheck} onColor={"darkorange"} effect={"tada"} _onPress={(status) => _this._answer(status, k)} text={currentOptions[k]} />
+                <Animbutton countCheck={_this.state.countCheck} onColor={"green"} effect={"tada"} _onPress={(status) => _this._answer(status, k)} text={currentOptions[k]} />
 
             </View>)
         });
@@ -142,10 +143,16 @@ export default class Quiz extends Component {
                         <View>
                             {options}
                         </View>
-
                         <View style={{ flexDirection: "row" }}>
+                            {/*   <Button
+          onPress={() => this.prev()}
+          title="Prev"
+          color="#841584"
+        />
+        <View style={{margin:15}} />*/}
+
                             <TouchableOpacity onPress={() => this.next()} >
-                                <View style={{ paddingTop: 5, paddingBottom: 5, paddingRight: 20, paddingLeft: 20, borderRadius: 10, backgroundColor: "crimson" }}>
+                                <View style={{ paddingTop: 5, paddingBottom: 5, paddingRight: 20, paddingLeft: 20, borderRadius: 10, backgroundColor: "green" }}>
                                     <Icon name="md-arrow-round-forward" size={30} color="white" />
                                 </View>
                             </TouchableOpacity >
@@ -163,7 +170,7 @@ const styles = StyleSheet.create({
     oval: {
         width: width * 90 / 100,
         borderRadius: 20,
-        backgroundColor: 'red'
+        backgroundColor: 'green'
     },
     container: {
         flex: 1,

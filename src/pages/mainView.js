@@ -29,6 +29,9 @@ export const GradientButton = props => {
 
 const mainView = ({ navigation }) => {
 
+
+    
+
     return (
 
         <ScrollView  >

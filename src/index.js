@@ -1,3 +1,4 @@
+import splashScreen from './pages/splashScreen'
 import mainView from './pages/mainView'
 import game1 from './pages/Game1'
 import game2 from './pages/Game2'
@@ -9,6 +10,7 @@ import { createStackNavigator } from 'react-navigation'
 
 
 const StackNavigator = createStackNavigator({
+    splashScreen: splashScreen,
     mainView: mainView,
     game1: game1,
     game2: game2,

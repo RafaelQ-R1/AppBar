@@ -47,7 +47,7 @@ export default class mainView extends React.Component {
                             </FadeInView1>
                             <FadeInView2>
                                 <TouchableOpacity onPress={() => navigation.navigate('game2')}>
-                                    <GradientButton label="Afronhado ou Viril?" icon={iconQuestion} />
+                                    <GradientButton label="Sorte ou azar?" icon={iconQuestion} />
                                 </TouchableOpacity>
                             </FadeInView2>
                             <FadeInView3>

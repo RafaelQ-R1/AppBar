@@ -30,10 +30,10 @@ export default class Game2 extends Component {
 
     finalizar = async () => {
         this.setState({ showSpiner: false })
-        const resultado = await ['Você é Afronhado', 'Você é Viril'],
+        const resultado = await ['Sorte', 'Azar'],
             valorResultado = Math.floor(Math.random() * resultado.length)
         this.setState({ resultadoFinal: resultado[valorResultado] })
-        if (this.state.resultadoFinal === 'Você é Afronhado') {
+        if (this.state.resultadoFinal === 'Sorte') {
             const valores1 = Lista.afronhado
             valorfinal1 = Math.floor(Math.random() * valores1.length)
             this.setState({ description: valores1[valorfinal1] })
@@ -103,6 +103,6 @@ Game2.navigationOptions = {
         />
     ),
 
-    title: 'Você é afronhado ou viril?',
+    title: 'Sorte ou azar?',
 }
 

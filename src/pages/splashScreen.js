@@ -25,7 +25,7 @@ class SplashScreen extends React.Component {
       <LinearGradient colors={['crimson', 'darkorange']} start={{ x: 0, y: 0 }} end={{ x: 0.75, y: 0.75 }} style={styles.viewStyles} >
         <View >
           <Text style={styles.textStyles}>
-            App BOTECO DO JOAQUIM
+            App Bar
         </Text>
         </View>
       </LinearGradient>

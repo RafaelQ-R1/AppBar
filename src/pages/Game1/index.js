@@ -12,7 +12,7 @@ export default class Game1 extends Component {
 
     state = {
         imagem: image1,
-        textobotao: "Sortear infeliz",
+        textobotao: "Sortear ",
         vezes: 0,
         sorteado: [],
         AdicionarSorteado: '',
@@ -23,7 +23,7 @@ export default class Game1 extends Component {
 
     sortearImagem = () => {
 
-        if (this.state.textobotao === "Sortear infeliz") {
+        if (this.state.textobotao === "Sortear ") {
             infelizes = this.state.sorteado
             if (infelizes.length < 2) {
 
@@ -107,11 +107,11 @@ export default class Game1 extends Component {
             ]
         }
 
-        const ButtonDisabledTrue = <Button title="adicionar infeliz" onPress={this.AddSorteado} disabled={true} ></Button>
-        const ButtonDisabledFalse = <Button title="adicionar infeliz" onPress={this.AddSorteado} disabled={false}  ></Button>
+        const ButtonDisabledTrue = <Button title="adicionar " onPress={this.AddSorteado} disabled={true} ></Button>
+        const ButtonDisabledFalse = <Button title="adicionar " onPress={this.AddSorteado} disabled={false}  ></Button>
 
         let MyButton
-        if (this.state.textobotao === 'Sortear infeliz') {
+        if (this.state.textobotao === 'Sortear ') {
 
             MyButton = ButtonDisabledFalse
         }

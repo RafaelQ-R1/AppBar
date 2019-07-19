@@ -1,82 +1,179 @@
-import React, { Component } from 'react';
-import Quiz  from '../../components/Quiz';
-import LinearGradient from 'react-native-linear-gradient'
-import styles from './styles'
-import {
 
-  StatusBar,
-  TouchableOpacity,
-  View,
-  Text
-} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-export default class Playquiz extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      quizFinish : false,
-      score: 0
-    }
-  }
-  _onPressBack(){
-    const {goBack} = this.props.navigation
-      goBack()
-  }
-  _quizFinish(score){    
-    this.setState({ quizFinish: true, score : score })
-  }
-  _scoreMessage(score){
-    if(score <= 30){
-      return (<View style={styles.innerContainer} >
-                <View style={{ flexDirection: "row"}} >
-                  <Icon name="trophy" size={30} color="white" />
-                </View>
-                <Text style={styles.score}>You need to work hard</Text>
-                <Text style={styles.score}>You scored {score}%</Text>
-              </View>)
-    }else if(score > 30 && score < 60){
-      return (<View style={styles.innerContainer} >
-                  <View style={{ flexDirection: "row"}} >
-                    <Icon name="trophy" size={30} color="white" />
-                    <Icon name="trophy" size={30} color="white" />
-                  </View>
-                  <Text style={styles.score}>You are good</Text>
-                  <Text style={styles.score}>Congrats you scored {score}% </Text>
-                </View>)
-    }else if(score >= 60){
-      return (<View style={styles.innerContainer}>
-                 <View style={{ flexDirection: "row"}} >
-                     <Icon name="trophy" size={30} color="white" />
-                     <Icon name="trophy" size={30} color="white" />
-                     <Icon name="trophy" size={30} color="white" />
-                  </View>
-                  <Text style={styles.score}>You are the master</Text>
-                  <Text style={styles.score}>Congrats you scored {score}% </Text>
-                </View>)
-    }
-  }
-  render() {
+import React, { Component } from 'react'
+import { Text, TouchableOpacity, View, TextInput, ScrollView } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
+import api from '../../services/api'
+import styles from './styles'
+
+export const GradientButton = props => {
     return (
-      <View style={{flex:1}}>
-      <StatusBar barStyle="light-content"/>
-      <View style={styles.toolbar}>
-                    <TouchableOpacity onPress={() => this._onPressBack() }><Text style={styles.toolbarButton}>Back</Text></TouchableOpacity>
-                    <Text style={styles.toolbarTitle}></Text>
-                    <Text style={styles.toolbarButton}></Text>
-      </View>
- 
-       { this.state.quizFinish ? <View style={styles.container}>
-           <View style={styles.circle}>
- 
-             { this._scoreMessage(this.state.score) }
-           </View>
- 
-       </View> :  <Quiz quizFinish={(score) => this._quizFinish(score)} /> }
- 
-      </View>
-    );
-  }
+        <LinearGradient colors={['darkred', 'red', 'white']} start={{ x: 0, y: 0 }} end={{ x: 1.50, y: 1.50 }} style={styles.LinearGradientStyleButton1}  >
+            <Text style={styles.button1}> {props.icon} {props.label}</Text>
+        </LinearGradient>
+    )
+
 }
+export default class index extends Component {
+    constructor(props) {
+        super(props)
+        navigation = this.props.navigation
+    }
+
+    state = {
+        nome: '',
+        email: '',
+        nomeDrink: '',
+        ingredientes: '',
+        modoPreparo: '',
+        tempoEstimado: '',
+        numeroDrinks: ''
+
+    }
+
+    enviarReceita = async () => {
+        try {
+
+            const {
+                nome,
+                email,
+                nomeDrink,
+                ingredientes,
+                modoPreparo,
+                tempoEstimado,
+                numeroDrinks } = this.state
+
+            if (!nome || !email || !nomeDrink || !tempoEstimado || !ingredientes || !modoPreparo || !tempoEstimado || !numeroDrinks) {
+                alert('Erro, existem campos vazios.')
+                return
+            }
+
+            await api.post('/enviarReceita', {
+                nome: nome,
+                email: email,
+                nomeDrink: nomeDrink,
+                ingredientes: ingredientes,
+                modoPreparo: modoPreparo,
+                tempoEstimado: tempoEstimado,
+                numeroDrinks: numeroDrinks
+            })
+
+            alert('Enviado')
+            this.setState({
+                nome: "",
+                email: "",
+                nomeDrink: "",
+                ingredientes: "",
+                modoPreparo: "",
+                tempoEstimado: "",
+                numeroDrinks: ""
+            })
+
+        } catch (err) {
+            alert(err)
+        }
+    }
+
+    render() {
+        return (
+            <ScrollView>
+                <View style={styles.mainView}>
+
+                    <View style={styles.childrenView2}>
+                        <Text style={styles.Text}> Enviar uma receita de drink </Text>
+                        <TextInput
+                            placeholder="Seu nome"
+                            value={this.state.nome}
+                            onChangeText={nome => this.setState({ nome })}
+                            multiline={true}
+                            style={styles.TextInput}
+                        />
+                        <TextInput
+                            placeholderTextColor="darkorange"
+                            placeholder="Seu email"
+                            value={this.state.email}
+                            onChangeText={email => this.setState({ email })}
+                            multiline={true}
+                            style={styles.TextInput}
+                        />
+                        <TextInput
+
+                            placeholder="Nome do drink"
+                            value={this.state.nomeDrink}
+                            onChangeText={nomeDrink => this.setState({ nomeDrink })}
+                            multiline={true}
+                            style={styles.TextInput}
+                        />
+                        <TextInput
+                            placeholderTextColor="darkorange"
+                            placeholder="Ingredientes"
+                            value={this.state.ingredientes}
+                            onChangeText={ingredientes => this.setState({ ingredientes })}
+                            multiline={true}
+                            style={styles.TextInput}
+                        />
+                        <TextInput
+                            placeholder="modo de preparo"
+                            value={this.state.modoPreparo}
+                            onChangeText={modoPreparo => this.setState({ modoPreparo })}
+                            multiline={true}
+                            style={styles.TextInput}
+                        />
+                        <TextInput
+                            placeholderTextColor="darkorange"
+                            placeholder="tempo estimado para preparar"
+                            value={this.state.tempoEstimado}
+                            onChangeText={tempoEstimado => this.setState({ tempoEstimado })}
+                            multiline={true}
+                            style={styles.TextInput}
+                        />
+                        <TextInput
+                            placeholder="Numero de porções"
+                            value={this.state.numeroDrinks}
+                            keyboardType="numeric"
+                            maxLength={2}
+                            onChangeText={numeroDrinks => this.setState({ numeroDrinks })}
+                            multiline={true}
+                            style={styles.TextInput}
+
+                        />
+                        <View style={styles.childrenView3}>
+                            <TouchableOpacity onPress={this.enviarReceita}>
+                                <GradientButton label="Enviar receita" style={styles.button1} />
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={styles.childrenView1}>
+                            <TouchableOpacity onPress={() => navigation.navigate('drinks')}>
+                                <GradientButton label="Lista de drinks" style={styles.button1} />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+            </ScrollView>
+        )
+    }
+}
+
+
+
+index.navigationOptions = {
+
+    title: 'Enviar receita',
+    headerBackground: (
+        <LinearGradient
+            colors={['red', 'darkorange']}
+            style={{ flex: 1 }}
+            start={{ x: 0.25, y: 0.25 }}
+            end={{ x: 1, y: 1 }}
+        />
+    ),
+    headerTitleStyle: {
+        fontWeight: 'bold',
+    },
+
+}
+
+
 
 
 

@@ -71,7 +71,7 @@ export default class Pensamento extends Component {
 
                     <TextInput
                         style={styles.TextInputStyleClass2}
-                        placeholder="Escreva seu Pensamento"
+                        placeholder="Escreva seu Pemsamento"
                         value={this.state.text}
                         onChangeText={text => this.setState({ text: text })}
                         maxLength={200}
